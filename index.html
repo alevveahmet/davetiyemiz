@@ -3,49 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>Alev & Ahmet Davetiye</title>
-    <meta name="description" content="Mutluluğumuza ortak olmanızdan onur duyarız.">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://alevveahmet.github.io/davetiye/">
     <meta property="og:title" content="Alev & Ahmet Davetiye">
     <meta property="og:description" content="Mutluluğumuza ortak olmanızdan onur duyarız.">
     <meta property="og:image" content="https://alevveahmet.github.io/davetiye/1.jpg">
-    <meta property="og:image:secure_url" content="https://alevveahmet.github.io/davetiye/1.jpg">
-    <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Alev & Ahmet Davetiye">
-    <meta name="twitter:description" content="Düğünümüze davetlisiniz!">
-    <meta name="twitter:image" content="https://alevveahmet.github.io/davetiye/1.jpg">
 
     <style>
         body { margin: 0; padding: 0; background-color: #fdfaf6; font-family: 'Georgia', serif; overflow-x: hidden; }
         .container { max-width: 500px; margin: 0 auto; background: #fff; box-shadow: 0 0 30px rgba(0,0,0,0.05); }
 
-        .img-wrapper { width: 100%; min-height: 450px; overflow: hidden; line-height: 0; background-color: #fdfaf6; }
-        img { width: 100%; height: auto; display: block; opacity: 0; filter: blur(20px); transform: scale(1.1); transition: all 2s cubic-bezier(0.4, 0, 0.2, 1); }
+        .img-wrapper { width: 100%; min-height: 400px; overflow: hidden; line-height: 0; background-color: #fdfaf6; }
+        img { width: 100%; height: auto; display: block; opacity: 0; filter: blur(15px); transform: scale(1.05); transition: all 1.5s ease-out; }
         img.is-visible { opacity: 1; filter: blur(0); transform: scale(1); }
 
-        /* GERİ SAYIM */
-        .countdown-section { padding: 40px 20px; text-align: center; background: #fff; border-top: 1px dashed #eee; }
-        .countdown-title { color: #8a7352; font-style: italic; font-size: 18px; margin-bottom: 20px; }
-        .countdown-timer { display: flex; justify-content: center; gap: 10px; }
-        .time-box { background: #fdfaf6; padding: 10px; border-radius: 8px; min-width: 60px; border: 1px solid #f2ede4; }
-        .time-number { display: block; font-size: 22px; color: #8a7352; font-weight: bold; }
-        .time-label { font-size: 10px; color: #a5937d; text-transform: uppercase; }
+        /* SAYAÇ VE BÖLÜM STİLLERİ */
+        .section-box { padding: 40px 20px; text-align: center; border-bottom: 1px dashed #eee; }
+        .section-title { color: #8a7352; font-style: italic; font-size: 20px; margin-bottom: 15px; font-weight: bold; }
+        .countdown-timer { display: flex; justify-content: center; gap: 10px; margin-bottom: 25px; }
+        .time-box { background: #fdfaf6; padding: 10px; border-radius: 8px; min-width: 55px; border: 1px solid #f2ede4; }
+        .time-number { display: block; font-size: 20px; color: #8a7352; font-weight: bold; }
+        .time-label { font-size: 9px; color: #a5937d; text-transform: uppercase; }
 
-        .footer { padding: 40px 20px 60px; text-align: center; background-color: #fff; }
-        .map-container { width: 90%; margin: 20px auto 30px; height: 250px; border-radius: 12px; overflow: hidden; border: 1px solid #eee; }
+        .map-container { width: 95%; margin: 15px auto; height: 200px; border-radius: 12px; overflow: hidden; border: 1px solid #eee; }
         iframe { width: 100%; height: 100%; border: none; }
 
-        .btn-konum { display: inline-block; padding: 18px 45px; border: 1px solid #8a7352; color: #8a7352; text-decoration: none; border-radius: 2px; font-size: 14px; letter-spacing: 3px; text-transform: uppercase; transition: 0.4s; }
+        .btn-konum { display: inline-block; padding: 15px 30px; border: 1px solid #8a7352; color: #8a7352; text-decoration: none; border-radius: 2px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; transition: 0.3s; margin-top: 10px;}
         .btn-konum:hover { background: #8a7352; color: #fff; }
 
-        #music-control { position: fixed; bottom: 25px; right: 25px; width: 50px; height: 50px; border-radius: 50%; background: rgba(138, 115, 82, 0.9); color: white; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 1000; border: none; font-size: 22px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        #music-control { position: fixed; bottom: 25px; right: 25px; width: 50px; height: 50px; border-radius: 50%; background: rgba(138, 115, 82, 0.9); color: white; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 1000; border: none; font-size: 22px; }
     </style>
 </head>
 <body>
@@ -54,54 +45,70 @@
     <button id="music-control" onclick="toggleMusic()">🎵</button>
 
     <div class="container">
-        <div class="img-wrapper"><img src="1.jpg" alt="Alev & Ahmet Kapak"></div>
-        <div class="img-wrapper"><img src="2.jpg" alt="Davetiye Bilgileri"></div>
+        <div class="img-wrapper"><img src="1.jpg"></div>
+        <div class="img-wrapper"><img src="2.jpg"></div>
 
-        <div class="countdown-section">
-            <div class="countdown-title">Mutluluğa Kalan Zaman</div>
-            <div class="countdown-timer" id="timer">
-                <div class="time-box"><span class="time-number" id="days">00</span><span class="time-label">Gün</span></div>
-                <div class="time-box"><span class="time-number" id="hours">00</span><span class="time-label">Saat</span></div>
-                <div class="time-box"><span class="time-number" id="minutes">00</span><span class="time-label">Dakika</span></div>
-                <div class="time-box"><span class="time-number" id="seconds">00</span><span class="time-label">Saniye</span></div>
+        <div class="section-box">
+            <div class="section-title">Nikah</div>
+            <div class="countdown-timer">
+                <div class="time-box"><span class="time-number" id="n-days">00</span><span class="time-label">Gün</span></div>
+                <div class="time-box"><span class="time-number" id="n-hours">00</span><span class="time-label">Saat</span></div>
+                <div class="time-box"><span class="time-number" id="n-mins">00</span><span class="time-label">Dak.</span></div>
+                <div class="time-box"><span class="time-number" id="n-secs">00</span><span class="time-label">Sn.</span></div>
             </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.6230047032363!2d28.646545276425126!3d41.01162401921828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b55f0ad1846df3%3A0xacf52a7d7a833dd0!2sBeylikd%C3%BCz%C3%BC%20Belediyesi%20Nikah%20Salonu%20-%20Beylicium%20AVM!5e0!3m2!1str!2str!4v1776413004203!5m2!1str!2str"></iframe>
+            </div>
+            <a href="https://maps.app.goo.gl/MA1KTsg14VVJ4iVy8" target="_blank" class="btn-konum">NİKAH KONUMUNA GİT</a>
         </div>
 
-        <div class="footer">
-            <p style="color: #a5937d; font-style: italic; margin-bottom: 20px;">Düğün Konumu</p>
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3052.3544729223577!2d31.88719907638962!3d40.0898090754715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d2bc3cb0666ae9%3A0x96c0c41cffa6d253!2zQmV5cGF6YXLEsSBBcyBCYWzEsWvDp8SxbMSxaw!5e0!3m2!1str!2str!4v1776412449078!5m2!1str!2str" allowfullscreen="" loading="lazy"></iframe>
+        <div class="section-box">
+            <div class="section-title">Düğün</div>
+            <div class="countdown-timer">
+                <div class="time-box"><span class="time-number" id="d-days">00</span><span class="time-label">Gün</span></div>
+                <div class="time-box"><span class="time-number" id="d-hours">00</span><span class="time-label">Saat</span></div>
+                <div class="time-box"><span class="time-number" id="d-mins">00</span><span class="time-label">Dak.</span></div>
+                <div class="time-box"><span class="time-number" id="d-secs">00</span><span class="time-label">Sn.</span></div>
             </div>
-            <a href="https://maps.app.goo.gl/E7HR3tyMEwuAWBYBA" target="_blank" class="btn-konum">NAVİGASYONDA AÇ</a>
-            <p style="margin-top: 50px; font-size: 11px; letter-spacing: 2px; color: #ccc;">ALEV & AHMET</p>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3052.3544729223577!2d31.88719907638962!3d40.0898090754715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d2bc3cb0666ae9%3A0x96c0c41cffa6d253!2zQmV5cGF6YXLEsSBBcyBCYWzEsWvDp8SxbMSxaw!5e0!3m2!1str!2str!4v1776412449078!5m2!1str!2str"></iframe>
+            </div>
+            <a href="https://maps.app.goo.gl/E7HR3tyMEwuAWBYBA" target="_blank" class="btn-konum">DÜĞÜN KONUMUNA GİT</a>
+        </div>
+
+        <div class="section-box" style="border:none;">
+            <p style="margin-top: 10px; font-size: 11px; letter-spacing: 2px; color: #ccc;">ALEV & AHMET</p>
         </div>
     </div>
 
     <script>
-        // Müzik
-        const audio = document.getElementById("myAudio");
-        const mBtn = document.getElementById("music-control");
         function toggleMusic() {
-            if (audio.paused) { audio.play(); mBtn.innerText = "🎶"; }
-            else { audio.pause(); mBtn.innerText = "🎵"; }
+            const audio = document.getElementById("myAudio");
+            const btn = document.getElementById("music-control");
+            if (audio.paused) { audio.play(); btn.innerText = "🎶"; }
+            else { audio.pause(); btn.innerText = "🎵"; }
         }
 
-        // Geri Sayım
-        const countdownDate = new Date("Jun 6, 2026 13:00:00").getTime();
-        setInterval(function() {
-            const now = new Date().getTime();
-            const distance = countdownDate - now;
-            document.getElementById("days").innerHTML = Math.floor(distance / (1000 * 60 * 60 * 24));
-            document.getElementById("hours").innerHTML = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            document.getElementById("minutes").innerHTML = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            document.getElementById("seconds").innerHTML = Math.floor((distance % (1000 * 60)) / 1000);
-        }, 1000);
+        function startTimer(targetDate, prefix) {
+            const date = new Date(targetDate).getTime();
+            setInterval(function() {
+                const now = new Date().getTime();
+                const dist = date - now;
+                document.getElementById(prefix + "days").innerHTML = Math.max(0, Math.floor(dist / (1000 * 60 * 60 * 24)));
+                document.getElementById(prefix + "hours").innerHTML = Math.max(0, Math.floor((dist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+                document.getElementById(prefix + "mins").innerHTML = Math.max(0, Math.floor((dist % (1000 * 60 * 60)) / (1000 * 60)));
+                document.getElementById(prefix + "secs").innerHTML = Math.max(0, Math.floor((dist % (1000 * 60)) / 1000));
+            }, 1000);
+        }
 
-        // Görseller
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); } });
-        }, { threshold: 0.15 });
-        document.querySelectorAll('img').forEach(img => { observer.observe(img); });
+        // Sayaçları Başlat
+        startTimer("May 2, 2026 17:00:00", "n-"); // Nikah
+        startTimer("Jun 6, 2026 13:00:00", "d-"); // Düğün
+
+        const obs = new IntersectionObserver((es) => {
+            es.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('img').forEach(img => obs.observe(img));
     </script>
 </body>
 </html>
